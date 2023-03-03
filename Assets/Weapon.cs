@@ -8,7 +8,8 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float fireForce = 20f;
-    
+    public AudioSource gun;
+    public AudioClip bullet1;
     // Start is called before the first frame update
     void Start()
     {
