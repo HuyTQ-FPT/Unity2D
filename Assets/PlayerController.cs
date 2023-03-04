@@ -46,4 +46,15 @@ public class PlayerController : MonoBehaviour
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = aimAngle;
     }
+    public float getSpeed()
+    {
+        return moveSpeed;
+    }
+    public float setSpeed(float value)
+    {
+        moveSpeed = value;
+        return moveSpeed;
+    }
+
+   
 }
