@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Vector2 mousePosition;
     public float timeSpawn =0f;
     public float timeDelay = 0.5f;
+     bool isColliding = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
         mouseDirection = new Vector2(moveX, moveY).normalized;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         this.timeSpawn += Time.deltaTime;
+        if(isColliding){
         if (timeSpawn < timeDelay)
         {
             return;
@@ -36,8 +38,20 @@ public class PlayerController : MonoBehaviour
             weapon.Fire();
             timeSpawn = 0;
         }
-       
+        }
 
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Stone"))
+        {
+          
+                Destroy(gameObject);
+        }
+         if (other.CompareTag("USung"))
+        {
+            isColliding = true;
+        }
     }
     private void FixedUpdate()
     {
@@ -56,5 +70,15 @@ public class PlayerController : MonoBehaviour
         return moveSpeed;
     }
 
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("USung"))
+        {
+            isColliding = false;
+          
+
+        }
+    }
    
 }

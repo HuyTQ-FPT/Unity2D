@@ -42,8 +42,8 @@ public class ReciveItems : MonoBehaviour
     {
         totalSpeed = js.getSpeed();
         totalSpeed += spUp;
-        if(totalSpeed >= 15){
-            totalSpeed = 15;
+        if(totalSpeed >= 10){
+            totalSpeed = 10;
         }
         js.setSpeed(totalSpeed);
         hasBeenCalled = true;
