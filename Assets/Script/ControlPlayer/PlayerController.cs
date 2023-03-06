@@ -48,6 +48,11 @@ public class PlayerController : MonoBehaviour
           
                 Destroy(gameObject);
         }
+         if (other.gameObject.CompareTag("Enemy"))
+        {
+          
+                Destroy(gameObject);
+        }
          if (other.CompareTag("USung"))
         {
             isColliding = true;

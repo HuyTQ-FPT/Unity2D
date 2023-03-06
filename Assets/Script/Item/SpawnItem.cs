@@ -42,9 +42,15 @@ public class SpawnItem : MonoBehaviour
 
             // int index = this.items.Count + 1;
             Debug.Log("vào else");
-            if (rand > 3 && rand < 8)
+            if(rand >= 1 && rand <= 3){
+
+            }
+            else if (rand > 3 && rand < 8)
             {
                 getItem = itSpeedUp;
+            }
+            else if ( rand >=8 && rand <= 11){
+                
             }
             else
             {
