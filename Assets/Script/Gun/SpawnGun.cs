@@ -76,9 +76,9 @@ public class SpawnGun : MonoBehaviour
 
         }
        
-        GameObject obj = Instantiate(GunX, new Vector2(X, Y), Quaternion.identity);
+        //GameObject obj = Instantiate(GunX, new Vector2(X, Y), Quaternion.identity);
         int size = Random.Range(1, 4);
-        obj.transform.localScale = new Vector3(size, size, 1f);
+        //obj.transform.localScale = new Vector3(size, size, 1f);
        
 
     }

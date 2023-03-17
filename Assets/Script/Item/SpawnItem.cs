@@ -57,8 +57,8 @@ public class SpawnItem : MonoBehaviour
                 return;
             }
 
-            GameObject item = Instantiate(this.getItem);
-            item.transform.position = new Vector2(X, Y);
+            //GameObject item = Instantiate(this.getItem);
+            //item.transform.position = new Vector2(X, Y);
             items.Add(getItem);
             Debug.Log(items.Count);
             timer.arlarmTime = 3;

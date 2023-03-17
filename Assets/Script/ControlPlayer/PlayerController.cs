@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject gameOver;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Weapon weapon;
@@ -47,11 +48,13 @@ public class PlayerController : MonoBehaviour
         {
           
                 Destroy(gameObject);
+                gameOver.SetActive(true);
         }
          if (other.gameObject.CompareTag("Enemy"))
         {
           
                 Destroy(gameObject);
+                gameOver.SetActive(true);
         }
          if (other.CompareTag("USung"))
         {

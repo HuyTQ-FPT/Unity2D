@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
     }
     void Start()
     {
-        target = GameObject.Find("Player").transform;
+        //target = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame
