@@ -17,11 +17,14 @@ public class Shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        activationTime += Time.deltaTime;
-        if (isProtected && activationTime >= 10)
+        if (isProtected)
         {
-            isProtected = false;
-            activationTime = 0;
+            activationTime += Time.deltaTime;
+            if (isProtected && activationTime >= 10)
+            {
+                isProtected = false;
+                activationTime = 0;
+            }
         }
     }
 
@@ -35,7 +38,13 @@ public class Shield : MonoBehaviour
         }
         if (collision.gameObject.tag == "Stone" || collision.gameObject.tag == "Enemy")
         {
-            if (!isProtected)
+            if (isProtected)
+            {
+                Destroy(collision.gameObject);
+                activationTime = 0;
+                isProtected = false;
+            }
+            else
             {
                 Destroy(gameObject);
             }
