@@ -10,10 +10,8 @@ public class scoreManager : MonoBehaviour
     public static scoreManager instance;
     public Text scoreText;
     public Text highscoreText;
-
     int score = 0;
     int highscore = 0;
-    int score2 = 0;
 
     public void Awake()
     {
@@ -24,6 +22,7 @@ public class scoreManager : MonoBehaviour
         highscore = PlayerPrefs.GetInt("highscore", 0);
         scoreText.text = score.ToString() + " POINTS";
         highscoreText.text = "HIGHSCORE: " + highscore.ToString();
+        PlayerPrefs.SetInt("score", score);
     }
 
     public void AddPoint()

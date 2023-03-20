@@ -6,10 +6,17 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     int heal = 6;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator= GetComponent<Animator>();
+    }
+    IEnumerator DesTroyE()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
+        scoreManager.instance.AddPoint();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,8 +28,9 @@ public class EnemyController : MonoBehaviour
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
-                Destroy(gameObject);
-                scoreManager.instance.AddPoint();
+                animator.SetBool("EnemyDie", true);
+                StartCoroutine(DesTroyE());
+                
             }
       
         }
@@ -35,8 +43,8 @@ public class EnemyController : MonoBehaviour
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
-                Destroy(gameObject);
-                scoreManager.instance.AddPoint();
+                animator.SetBool("EnemyDie", true);
+                StartCoroutine(DesTroyE());
             }
 
         }
@@ -48,8 +56,8 @@ public class EnemyController : MonoBehaviour
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
-                Destroy(gameObject);
-                scoreManager.instance.AddPoint();
+                animator.SetBool("EnemyDie", true);
+                StartCoroutine(DesTroyE());
             }
 
         }
@@ -61,8 +69,8 @@ public class EnemyController : MonoBehaviour
             Destroy(collision.gameObject);
             if (heal <= 0)
             {
-                Destroy(gameObject);
-                scoreManager.instance.AddPoint();
+                animator.SetBool("EnemyDie", true);
+                StartCoroutine(DesTroyE());
             }
 
         }
