@@ -10,12 +10,10 @@ public class ScoreGameOver : MonoBehaviour
     int scoreGameOver;
     scoreManager sc;
     public Text scoreTxt;
-    int check = 0;
     void Start()
     {
         sc = FindObjectOfType<scoreManager>();
-        check = 1;
-
+        
     }
 
     // Update is called once per frame
