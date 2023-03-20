@@ -275,6 +275,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1453585499 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4631467139507801072, guid: 5894d1b952f34184ea68a8c6742e8b34, type: 3}
+  m_PrefabInstance: {fileID: 4631467140116053981}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4631467140116053981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -286,6 +297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4631467140210689080, guid: 5894d1b952f34184ea68a8c6742e8b34, type: 3}
+      propertyPath: scoreTxt
+      value: 
+      objectReference: {fileID: 1453585499}
     - target: {fileID: 4631467140210689086, guid: 5894d1b952f34184ea68a8c6742e8b34, type: 3}
       propertyPath: m_Pivot.x
       value: 0
