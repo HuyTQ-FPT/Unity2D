@@ -7,6 +7,7 @@ public class Shield : MonoBehaviour
     // Start is called before the first frame update
     public bool isProtected;
     public float activationTime;
+    GameObject enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,12 @@ public class Shield : MonoBehaviour
             }
         }
     }
+    IEnumerator DesTroyE()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
+        scoreManager.instance.AddPoint();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,7 +43,7 @@ public class Shield : MonoBehaviour
             activationTime = 0;
             collision.gameObject.SetActive(false);
         }
-        if (collision.gameObject.tag == "Stone" || collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Stone")
         {
             if (isProtected)
             {
@@ -46,6 +53,20 @@ public class Shield : MonoBehaviour
             }
             else
             {
+                Destroy(gameObject);
+            }
+        }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            if (isProtected)
+            {
+                collision.gameObject.GetComponent<Animator>().SetBool("EnemyDie", true);
+                StartCoroutine(DesTroyE());
+                activationTime = 0;
+                isProtected = false;
+            }
+            else
+            {               
                 Destroy(gameObject);
             }
         }
