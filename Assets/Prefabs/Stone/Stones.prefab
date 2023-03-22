@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8aa1a1d91192f4e9773d72e44dd000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 10
   targetPosition: {x: 0, y: 0}
   targetTransform: {fileID: 0}
   destroyDistance: 1

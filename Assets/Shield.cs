@@ -60,8 +60,9 @@ public class Shield : MonoBehaviour
         {
             if (isProtected)
             {
-                collision.gameObject.GetComponent<Animator>().SetBool("EnemyDie", true);
-                StartCoroutine(DesTroyE());
+                //collision.gameObject.GetComponent<Animator>().SetBool("EnemyDie", true);
+                //StartCoroutine(DesTroyE());
+                Destroy(collision.gameObject);
                 activationTime = 0;
                 isProtected = false;
             }

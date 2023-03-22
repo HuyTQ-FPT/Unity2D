@@ -6,10 +6,24 @@ public class SpawnEnemy : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject objectPrefab;
-    public float spawnInterval = 2f;
+    public float spawnInterval = 6f;
     public float spawnRange = 10f;
 
     private float timeSinceLastSpawn;
+
+    void Start()
+    {
+        StartCoroutine(DecreaseValue());
+    }
+
+    IEnumerator DecreaseValue()
+    {
+        while (spawnInterval > 2)
+        {
+            yield return new WaitForSeconds(15f);
+            spawnInterval--;
+        }
+    }
 
     void Update()
     {
